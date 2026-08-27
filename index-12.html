@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <meta name="description" content="Customer First Marketing Services — understand your car insurance before you buy." />
+  <title>Customer First — Car Insurance, Understood.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#090909;--panel:#111111;--panel2:#171717;--ink:#f4f1eb;--muted:#a9a59f;--line:rgba(244,241,235,.14);--accent:#ff552b;--accent2:#ff7958;--max:1440px;--radius:28px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
+    a{color:inherit;text-decoration:none} button,input,textarea,select{font:inherit}
+    .shell{width:min(calc(100% - 56px),var(--max));margin:0 auto}
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.045;z-index:50;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
+    .grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:88px 88px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+    .kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center}.dot{width:7px;height:7px;background:var(--accent);display:inline-block;border-radius:50%;box-shadow:0 0 20px rgba(255,85,43,.55)}
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:40;padding:20px 0;mix-blend-mode:normal;background:linear-gradient(to bottom,rgba(9,9,9,.88),transparent)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand-badge{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;background:var(--accent);color:#fff;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;box-shadow:0 10px 26px rgba(255,85,43,.28)}.brand{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.nav-links{display:flex;gap:28px;font-size:12px;color:var(--muted)}.nav-links a{transition:.25s}.nav-links a:hover{color:var(--ink)}
+    .nav-cta,.btn{border:1px solid var(--line);padding:13px 18px;border-radius:999px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;font-size:11px;background:transparent;color:var(--ink);transition:transform .25s,border-color .25s,background .25s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);border-color:var(--ink)}.btn.fill{background:var(--accent);border-color:var(--accent);color:#100b09}.btn.fill:hover{background:#ff6c46;border-color:#ff6c46}.btn.large{padding:16px 22px;font-size:12px}
+    section{position:relative}.hero{min-height:100svh;display:flex;align-items:flex-end;padding:150px 0 48px;overflow:hidden}.hero .shell{position:relative;z-index:2;width:min(calc(100% - 56px),var(--max))}.hero-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:60px}.hero-copy{max-width:1200px}.hero-title{font-family:"Barlow Condensed",sans-serif;font-weight:900;text-transform:uppercase;line-height:.78;letter-spacing:-.045em;font-size:clamp(86px,13vw,205px);margin:0}.hero-title span{display:block}.hero-title .accent{color:var(--accent)}.hero-sub{margin:34px 0 30px;display:grid;grid-template-columns:1.1fr .8fr;gap:36px;max-width:900px}.hero-sub p{margin:0;font-size:18px;line-height:1.5;color:#d5d1ca}.micro{font-size:12px;line-height:1.55;color:var(--muted);max-width:320px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-metadata{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border-top:1px solid var(--line);margin-top:74px;background:var(--line)}.meta{background:var(--bg);padding:18px 20px 4px}.meta-num{font-family:"Barlow Condensed";font-size:28px;font-weight:700;color:var(--accent);margin-bottom:12px}.meta strong{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px}.meta span{font-size:12px;color:var(--muted)}
+    .hero-orb{position:absolute;right:-13vw;top:16vh;width:46vw;height:46vw;border-radius:50%;border:1px solid rgba(255,255,255,.11);box-shadow:0 0 130px rgba(255,85,43,.08),inset 0 0 70px rgba(255,85,43,.03);transform:rotate(19deg)}.hero-orb:before,.hero-orb:after{content:"";position:absolute;inset:10%;border:1px solid rgba(255,255,255,.07);border-radius:45% 55% 50% 45%;}.hero-orb:after{inset:22%;border-color:rgba(255,85,43,.16)}
+    .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}.ticker-track{display:flex;white-space:nowrap;min-width:max-content;animation:scroll 24s linear infinite;padding:17px 0;font-family:"Barlow Condensed";text-transform:uppercase;font-size:21px;letter-spacing:.03em}.ticker span{margin:0 14px;color:var(--muted)}.ticker .accent{color:var(--accent)}@keyframes scroll{to{transform:translateX(-50%)}}
+    .section{padding:150px 0}.split{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}.display{font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;line-height:.88;letter-spacing:-.035em;font-size:clamp(58px,8vw,128px);margin:0}.display .accent{color:var(--accent)}.body{font-size:17px;line-height:1.65;color:#c7c3bd;max-width:560px}.rule{height:1px;background:var(--line);margin:46px 0}.marker-list{display:grid;gap:18px}.marker{display:grid;grid-template-columns:50px 1fr;gap:16px}.marker .num{font-family:"Barlow Condensed";font-size:22px;color:var(--accent)}.marker .txt{font-size:13px;color:var(--muted);line-height:1.5}.marker strong{color:var(--ink)}
+    .help{padding-top:40px}.help-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:70px}.help-card{background:var(--bg);padding:28px;min-height:270px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,background .25s}.help-card:hover{background:#101010;transform:translateY(-5px)}.help-card .num{font-family:"Barlow Condensed";font-size:64px;font-weight:700;color:var(--accent)}.help-card h3{margin:0;font-family:"Barlow Condensed";font-size:34px;text-transform:uppercase}.help-card p{font-size:13px;line-height:1.55;color:var(--muted);max-width:240px}
+    .coverage{background:#0c0c0c}.coverage-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}.sticky-title{position:sticky;top:120px;height:max-content}.coverage-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.cov-card{position:relative;background:#121212;border:1px solid var(--line);padding:24px;min-height:180px;border-radius:18px;cursor:pointer;transition:.25s;overflow:hidden}.cov-card:hover,.cov-card.active{border-color:rgba(255,85,43,.7);transform:translateY(-3px)}.cov-card h4{font-family:"Barlow Condensed";text-transform:uppercase;font-size:28px;margin:0 0 22px}.cov-card p{color:var(--muted);font-size:12px;line-height:1.5;margin:0}.cov-panel{margin-top:18px;border:1px solid var(--line);padding:26px;border-radius:20px;background:linear-gradient(135deg,#131313,#0e0e0e)}.cov-panel-title{font-family:"Barlow Condensed";font-size:42px;text-transform:uppercase;margin:0 0 8px}.cov-panel p{color:#c9c5be;line-height:1.6;font-size:14px}.why{display:grid;grid-template-columns:100px 1fr;gap:20px;border-top:1px solid var(--line);padding-top:18px;margin-top:24px}.why label{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.why div{font-size:13px;color:var(--ink)}
+    .compare .compare-wrap{margin-top:60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:auto}.compare table{width:100%;border-collapse:collapse;min-width:700px}.compare th,.compare td{padding:22px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:12px}.compare th{font-family:"Barlow Condensed";text-transform:uppercase;font-size:20px}.compare th:first-child{width:28%;color:var(--muted)}.compare td:first-child{color:var(--muted)}.plan{display:inline-block;padding:7px 10px;background:#151515;border:1px solid var(--line);border-radius:999px}.plan.hot{background:rgba(255,85,43,.12);border-color:rgba(255,85,43,.55);color:#ff9a82}.check{color:var(--accent);font-weight:800}
+    .claims{background:var(--ink);color:#0b0b0b}.claims .eyebrow,.claims .body{color:#595650}.claims .display .accent{color:var(--accent)}.process{display:grid;grid-template-columns:repeat(4,1fr);margin-top:65px;border-top:1px solid rgba(10,10,10,.25);border-bottom:1px solid rgba(10,10,10,.25)}.step{padding:24px 14px 24px 0;border-right:1px solid rgba(10,10,10,.25);margin-right:18px}.step:last-child{border-right:none;margin-right:0}.step .num{font-family:"Barlow Condensed";font-size:56px}.step h3{font-family:"Barlow Condensed";font-size:30px;text-transform:uppercase;margin:8px 0}.step p{font-size:12px;line-height:1.55;color:#5f5b54;max-width:220px}
+    .editorial{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);margin-top:65px}.article{background:var(--bg);padding:28px;min-height:360px;position:relative;display:flex;flex-direction:column;justify-content:space-between;transition:.3s}.article:hover{transform:translateY(-4px);background:#101010}.article .idx{font-family:"Barlow Condensed";font-size:24px;color:var(--accent)}.article h3{font-family:"Barlow Condensed";font-size:46px;text-transform:uppercase;line-height:.9;margin:0;max-width:480px}.article p{margin:0;color:var(--muted);font-size:13px;max-width:420px}.article a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+    .visual-break{padding:50px 0}.visual-card{min-height:560px;border-radius:32px;overflow:hidden;position:relative;background-image:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1800&q=86');background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:45px}.visual-card h2{font-family:"Barlow Condensed";font-size:clamp(60px,8vw,118px);line-height:.82;text-transform:uppercase;margin:0;max-width:800px}.visual-card h2 span{color:var(--accent)}
+    .about .about-grid{display:grid;grid-template-columns:1fr .7fr;gap:70px}.quote{border-left:2px solid var(--accent);padding-left:22px;font-family:"Barlow Condensed";font-size:44px;line-height:1.0;text-transform:uppercase}.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.pill{border:1px solid var(--line);padding:8px 11px;border-radius:999px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+    .testimonials{background:#0d0d0d}.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:65px}.t-card{background:#131313;border:1px solid var(--line);border-radius:22px;padding:27px;min-height:330px;display:flex;flex-direction:column;justify-content:space-between}.t-card blockquote{font-family:"Barlow Condensed";text-transform:uppercase;font-size:31px;line-height:1.0;margin:0}.t-card footer{border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:11px}
+    .lead{padding:150px 0}.lead-grid{display:grid;grid-template-columns:1fr .8fr;gap:90px}.lead h2{font-family:"Barlow Condensed";font-size:clamp(68px,9vw,140px);line-height:.82;text-transform:uppercase;margin:0}.lead h2 span{color:var(--accent)}.lead-form{display:grid;gap:10px}.field{display:grid;gap:7px}.field label{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:#0f0f0f;color:var(--ink);border-radius:12px;padding:14px 15px;outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(255,85,43,.7)}.field textarea{min-height:120px;resize:vertical}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.contact-quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .footer-cta{background:#0a0a0a;padding:120px 0 60px;border-top:1px solid var(--line)}.footer-cta h2{font-family:"Barlow Condensed";font-size:clamp(80px,14vw,200px);line-height:.77;text-transform:uppercase;letter-spacing:-.04em;margin:0}.footer-cta h2 .accent{color:var(--accent)}.footer-bottom{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px;border-top:1px solid var(--line);margin-top:80px;padding-top:24px}.footer-bottom h4{font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 15px}.footer-bottom a,.footer-bottom p{font-size:12px;color:var(--muted);display:block;margin:0 0 8px}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}.cursor-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);position:fixed;left:0;top:0;z-index:100;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:screen;opacity:.8}.cursor-ring{width:34px;height:34px;border:1px solid rgba(255,255,255,.35);border-radius:50%;position:fixed;left:0;top:0;z-index:99;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s}.cursor-active + .cursor-ring{width:54px;height:54px;border-color:var(--accent)}
+    @media(max-width:1050px){.nav-links{display:none}.hero-sub,.split,.coverage-grid,.lead-grid,.about .about-grid{grid-template-columns:1fr}.help-grid{grid-template-columns:1fr 1fr}.quote-grid{grid-template-columns:1fr}.editorial{grid-template-columns:1fr}.hero{padding-top:130px}.sticky-title{position:relative;top:auto}.process{grid-template-columns:1fr 1fr}.footer-bottom{grid-template-columns:1fr 1fr}}
+    @media(max-width:680px){.shell{width:min(calc(100% - 28px),var(--max))}.hero{padding:120px 0 28px;min-height:auto}.hero-title{font-size:25vw;line-height:.83}.hero-top{margin-bottom:42px}.hero-sub{gap:22px;margin-top:25px}.hero-sub p{font-size:16px}.hero-metadata{grid-template-columns:1fr}.meta{padding:15px 14px}.section,.lead{padding:92px 0}.display{font-size:20vw}.help-grid,.coverage-tabs,.form-grid,.process{grid-template-columns:1fr}.help-card{min-height:220px}.cov-card{min-height:auto}.visual-card{min-height:420px;padding:26px;border-radius:22px}.visual-card h2{font-size:20vw}.quote{font-size:34px}.article{min-height:270px}.article h3{font-size:36px}.footer-cta{padding-top:90px}.footer-bottom{grid-template-columns:1fr}.cursor-dot,.cursor-ring{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.reveal{transition:none}.cursor-dot,.cursor-ring{display:none}}
+  </style>
+
+<style id="motion-upgrade">
+  body{cursor:none}.site-nav{transition:background .45s ease,backdrop-filter .45s ease,padding .45s ease;border-bottom:1px solid transparent}.site-nav.scrolled{background:rgba(9,9,9,.72);backdrop-filter:blur(18px);padding:14px 0;border-bottom-color:var(--line)}
+  .page-progress{position:fixed;left:0;top:0;height:2px;width:0;background:var(--accent);z-index:120;box-shadow:0 0 16px rgba(255,85,43,.7)}
+  .preloader{position:fixed;inset:0;background:#090909;z-index:110;display:grid;place-items:center;transition:opacity .8s ease,visibility .8s ease}.preloader.hide{opacity:0;visibility:hidden}.loader-mark{font-family:"Barlow Condensed";font-weight:900;font-size:clamp(60px,12vw,160px);line-height:.8;text-transform:uppercase;overflow:hidden}.loader-mark span{display:block;transform:translateY(110%);animation:loaderUp .9s cubic-bezier(.16,1,.3,1) forwards}.loader-mark span:nth-child(2){animation-delay:.08s;color:var(--accent)}@keyframes loaderUp{to{transform:translateY(0)}}
+  .hero{perspective:1000px}.hero-copy,.hero-metadata{will-change:transform}.hero-orb{will-change:transform;animation:orbFloat 10s ease-in-out infinite alternate}.hero-orb:before{animation:orbSpin 18s linear infinite}.hero-orb:after{animation:orbSpin 12s linear infinite reverse}@keyframes orbFloat{to{transform:translate3d(-3vw,2vh,0) rotate(31deg)}}@keyframes orbSpin{to{transform:rotate(360deg)}}
+  .grid-bg{transform:translate3d(0,0,0);will-change:transform}.cursor-ring{transition:width .25s cubic-bezier(.2,.8,.2,1),height .25s cubic-bezier(.2,.8,.2,1),border-color .25s,background .25s,transform .12s}.cursor-ring.active{width:58px;height:58px;border-color:var(--accent);background:rgba(255,85,43,.06)}.cursor-dot{transition:transform .15s ease}
+  .reveal{opacity:0;transform:translateY(48px);filter:blur(7px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1),filter 1s cubic-bezier(.16,1,.3,1)}.reveal.in{opacity:1;transform:none;filter:none}.reveal-stagger>*{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}.reveal-stagger.in>*{opacity:1;transform:none}.reveal-stagger.in>*:nth-child(2){transition-delay:.08s}.reveal-stagger.in>*:nth-child(3){transition-delay:.16s}.reveal-stagger.in>*:nth-child(4){transition-delay:.24s}
+  .hero-title span{overflow:hidden}.hero-title span{clip-path:inset(0 0 100% 0);transform:translateY(18px);opacity:0;transition:clip-path 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1),opacity .7s}.hero-ready .hero-title span{clip-path:inset(0);transform:none;opacity:1}.hero-ready .hero-title span:nth-child(2){transition-delay:.12s}.hero-ready .hero-title span:nth-child(3){transition-delay:.24s}
+  .btn{position:relative;overflow:hidden;isolation:isolate}.btn:before{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.16,1,.3,1);z-index:-1;border-radius:inherit}.btn:hover:before{transform:scaleX(1);transform-origin:left}.btn.fill:before{background:#fff}.btn span{display:inline-block;transition:transform .35s}.btn:hover span{transform:translateX(5px)}
+  .help-card,.cov-card,.article,.t-card{will-change:transform;transition:transform .45s cubic-bezier(.16,1,.3,1),border-color .3s,background .3s,box-shadow .45s}.help-card:hover,.article:hover{transform:translateY(-10px) rotateX(1deg);box-shadow:0 25px 60px rgba(0,0,0,.28)}.cov-card:hover,.cov-card.active{box-shadow:0 20px 50px rgba(255,85,43,.08)}
+  .cov-card:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .45s}.cov-card:hover:after,.cov-card.active:after{transform:scaleX(1)}
+  .cov-panel{animation:panelIn .45s cubic-bezier(.16,1,.3,1)}@keyframes panelIn{from{opacity:0;transform:translateY(10px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+  .process{position:relative}.process:before{content:"";position:absolute;left:0;top:-1px;width:0;height:1px;background:var(--accent);transition:width 1.4s cubic-bezier(.16,1,.3,1)}.process.in:before{width:100%}.step{transition:transform .5s ease,opacity .5s}.step:hover{transform:translateY(-8px)}.step .num{transition:color .3s,transform .4s}.step:hover .num{color:var(--accent);transform:translateX(6px)}
+  .article a{display:inline-flex;gap:8px;align-items:center}.article a:after{content:"";height:1px;background:var(--accent);width:0;transition:width .35s}.article:hover a:after{width:34px}
+  .t-card{transform-style:preserve-3d}.t-card blockquote{transition:transform .45s}.t-card:hover blockquote{transform:translateZ(18px)}
+  .field{position:relative}.field label{transition:transform .3s,color .3s;transform-origin:left}.field:focus-within label{color:var(--accent);transform:translateY(-3px) scale(.94)}.field input:focus,.field textarea:focus,.field select:focus{box-shadow:0 0 0 1px var(--accent),0 0 35px rgba(255,85,43,.08)}
+  .magnetic{will-change:transform}.hero-sub p,.body{transition:color .3s}.spotlight{position:fixed;inset:auto;width:520px;height:520px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,85,43,.07),transparent 65%);transform:translate(-50%,-50%);z-index:0;mix-blend-mode:screen;will-change:left,top}
+  .section-number{position:absolute;right:28px;top:28px;font:700 10px "DM Sans";letter-spacing:.16em;color:rgba(244,241,235,.3);text-transform:uppercase}.scroll-cue{position:absolute;right:28px;bottom:48px;writing-mode:vertical-rl;font-size:10px;letter-spacing:.16em;color:var(--muted);display:flex;gap:10px;align-items:center}.scroll-cue:after{content:"";height:54px;width:1px;background:var(--accent);animation:scrollLine 1.5s ease-in-out infinite}@keyframes scrollLine{0%,100%{transform:scaleY(.35);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+  @media(max-width:680px){body{cursor:auto}.spotlight{display:none}.scroll-cue{display:none}.site-nav{padding:14px 0}.hero-title span{transition-duration:.75s}.reveal{transform:translateY(28px);filter:blur(4px)}}
+  @media(prefers-reduced-motion:reduce){.preloader{display:none!important}.hero-orb,.hero-orb:before,.hero-orb:after,.scroll-cue:after{animation:none}.reveal,.reveal-stagger>*{transition:none;filter:none;transform:none}.hero-title span{clip-path:none;opacity:1;transform:none;transition:none}.spotlight{display:none}.btn:before{display:none}}
+  .ripple{position:absolute;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);transform:translate(-50%,-50%) scale(0);animation:ripple .65s ease-out forwards;pointer-events:none}@keyframes ripple{to{transform:translate(-50%,-50%) scale(20);opacity:0}}
+</style>
+
+<style id="porto-motion-upgrade">
+  :root{--ease-port: cubic-bezier(.16,1,.3,1)}
+  body{background:#090909}
+  /* Porto-inspired editorial rail + section rhythm */
+  .editorial-rail{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:35;display:flex;flex-direction:column;gap:11px;align-items:center;mix-blend-mode:difference}
+  .editorial-rail span{display:block;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.35;transition:all .45s var(--ease-port)}
+  .editorial-rail span.active{height:28px;border-radius:4px;opacity:1;background:var(--accent);box-shadow:0 0 18px rgba(255,85,43,.55)}
+  .section-index{position:absolute;right:0;top:24px;font:600 11px/1 "DM Sans";letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+  .section-index b{color:var(--accent);font-weight:700}
+
+  /* Hero: oversized staggered editorial entrance */
+  .hero-title span{clip-path:inset(0 0 100% 0);transform:translateY(35px);opacity:0;transition:clip-path 1s var(--ease-port),transform 1s var(--ease-port),opacity .7s ease}
+  body.hero-ready .hero-title span{clip-path:inset(0 0 0 0);transform:none;opacity:1}
+  body.hero-ready .hero-title span:nth-child(2){transition-delay:.10s}
+  body.hero-ready .hero-title span:nth-child(3){transition-delay:.18s}
+  .hero-copy{will-change:transform}
+  .hero-orb{animation:orbFloat 11s ease-in-out infinite alternate;will-change:transform}
+  .hero-orb:before{animation:orbSpin 18s linear infinite}
+  .hero-orb:after{animation:orbPulse 5s ease-in-out infinite}
+  @keyframes orbFloat{to{transform:translate3d(-25px,22px,0) rotate(28deg)}}
+  @keyframes orbSpin{to{transform:rotate(360deg)}}
+  @keyframes orbPulse{50%{inset:17%;opacity:.65}}
+  .scroll-cue{position:absolute;right:28px;bottom:48px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;display:flex;gap:12px;align-items:center}
+  .scroll-cue:after{content:"";width:1px;height:62px;background:linear-gradient(var(--accent),transparent);animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{50%{transform:scaleY(.35);transform-origin:top}}
+
+  /* Editorial reveals: words move independently, like a Framer presentation */
+  .porto-reveal{overflow:hidden}
+  .porto-reveal>*{transform:translateY(105%);opacity:0;transition:transform 1s var(--ease-port),opacity .65s ease}
+  .porto-reveal.in>*{transform:none;opacity:1}
+  .porto-reveal.in>*:nth-child(2){transition-delay:.07s}.porto-reveal.in>*:nth-child(3){transition-delay:.14s}
+  .display,.lead h2{text-wrap:balance}
+  .display .accent{display:inline-block;transition:transform .8s var(--ease-port),letter-spacing .8s var(--ease-port)}
+  .section:hover .display .accent{letter-spacing:.005em}
+
+  /* Moving editorial strips */
+  .ticker{position:relative}
+  .ticker-track{animation-duration:20s;will-change:transform}
+  .ticker-track b{transition:color .3s ease}
+  .ticker:hover .ticker-track{animation-play-state:paused}
+  .editorial-marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:85px;transform:rotate(-1.2deg) scale(1.015)}
+  .editorial-marquee-track{display:flex;width:max-content;animation:marquee2 24s linear infinite;padding:20px 0;align-items:center}
+  .editorial-marquee span{font-family:"Barlow Condensed";font-weight:800;font-size:clamp(42px,6vw,92px);line-height:.8;text-transform:uppercase;white-space:nowrap;margin-right:28px;letter-spacing:-.03em}
+  .editorial-marquee span:nth-child(even){color:var(--accent);-webkit-text-stroke:1px var(--accent)}
+  .editorial-marquee span:nth-child(odd){color:transparent;-webkit-text-stroke:1px rgba(244,241,235,.65)}
+  @keyframes marquee2{to{transform:translateX(-50%)}}
+
+  /* Reference-like image treatment */
+  .visual-card{transition:transform .8s var(--ease-port),background-position 1.2s var(--ease-port);will-change:transform,background-position}
+  .visual-break{overflow:hidden}
+  .visual-break .visual-card:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,85,43,.13),transparent 35%,rgba(0,0,0,.28));mix-blend-mode:screen;pointer-events:none}
+  .visual-card:hover{transform:scale(.985)}
+  .visual-card:hover{background-position:52% 48%}
+
+  /* Cards feel like moving panels rather than static boxes */
+  .help-card,.cov-card,.article,.t-card{will-change:transform;transform-style:preserve-3d}
+  .help-card:before,.cov-card:before,.article:before,.t-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,85,43,.13),transparent 34%);opacity:0;transition:opacity .35s ease;pointer-events:none}
+  .help-card:hover:before,.cov-card:hover:before,.article:hover:before,.t-card:hover:before{opacity:1}
+  .help-card .num,.article .idx{transition:transform .55s var(--ease-port),color .35s ease}
+  .help-card:hover .num,.article:hover .idx{transform:translateX(7px);color:#fff}
+
+  /* Comparison rows sweep in when visible */
+  .compare tbody tr{opacity:.45;transform:translateX(-18px);transition:opacity .65s ease,transform .65s var(--ease-port)}
+  .compare.in tbody tr{opacity:1;transform:none}
+  .compare.in tbody tr:nth-child(2){transition-delay:.04s}.compare.in tbody tr:nth-child(3){transition-delay:.08s}.compare.in tbody tr:nth-child(4){transition-delay:.12s}.compare.in tbody tr:nth-child(5){transition-delay:.16s}.compare.in tbody tr:nth-child(6){transition-delay:.20s}.compare.in tbody tr:nth-child(7){transition-delay:.24s}
+  .compare td,.compare th{transition:background .25s ease,color .25s ease}
+  .compare tbody tr:hover td{background:rgba(255,85,43,.045)}
+
+  /* Claims: animated route */
+  .process{position:relative}
+  .process:before{content:"";position:absolute;left:0;top:-1px;width:0;height:1px;background:var(--accent);transition:width 1.6s var(--ease-port)}
+  .claims.in .process:before{width:100%}
+  .step{position:relative;transition:transform .6s var(--ease-port)}
+  .step:after{content:"";position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:#0b0b0b;border:1px solid rgba(10,10,10,.35);transition:background .3s ease,transform .5s var(--ease-port)}
+  .claims.in .step:after{background:var(--accent);transform:scale(1.25)}
+  .step:hover{transform:translateY(-7px)}
+
+  /* Cursor and CTA polish */
+  .btn{position:relative;overflow:hidden;isolation:isolate}
+  .btn:before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.12);transform:translateX(-105%);transition:transform .55s var(--ease-port);z-index:-1}
+  .btn:hover:before{transform:none}
+  .nav-links a{position:relative}
+  .nav-links a:after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:var(--accent);transition:right .35s var(--ease-port)}
+  .nav-links a:hover:after{right:0}
+
+  /* Form fields slide labels */
+  .field{position:relative}
+  .field input,.field textarea,.field select{transition:border-color .35s ease,box-shadow .35s ease,transform .35s var(--ease-port)}
+  .field:focus-within input,.field:focus-within textarea,.field:focus-within select{border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,85,43,.07);transform:translateY(-2px)}
+
+  @media(max-width:680px){
+    .editorial-rail{display:none}.section-index{right:14px}.scroll-cue{display:none}
+    .editorial-marquee{margin-top:55px}.editorial-marquee span{font-size:17vw}
+    .hero-orb{width:90vw;height:90vw;right:-40vw;top:18vh}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero-orb,.hero-orb:before,.hero-orb:after,.scroll-cue:after,.editorial-marquee-track{animation:none!important}
+    .hero-title span,.porto-reveal>*,.compare tbody tr{transition:none!important;transform:none!important;opacity:1!important;clip-path:none!important}
+  }
+
+  /* FINAL VISUAL PASS — typography + motion first, orange kept deliberately sparse */
+  :root{--accent:#ff5a36;--ink:#f5f2ec;--muted:#918f8a;--line:rgba(245,242,236,.13);--signal:#ff5a36}
+  .dot{background:var(--signal);box-shadow:0 0 16px rgba(255,90,54,.28)}
+  .accent,.hero-title .accent,.display .accent,.visual-card h2 span,.lead h2 span,.footer-cta h2 .accent,.claims .display .accent{color:var(--ink)!important}
+  .btn.fill{background:transparent;border-color:var(--ink);color:var(--ink)}
+  .btn.fill:hover{background:var(--ink);border-color:var(--ink);color:#090909}
+  .btn.fill:after{content:'';position:absolute;right:14px;top:50%;width:4px;height:4px;border-radius:50%;background:var(--signal);transform:translateY(-50%);transition:transform .35s ease}
+  .btn.fill:hover:after{transform:translateY(-50%) scale(1.7)}
+  .meta-num,.help-card .num,.article .idx,.marker .num{color:var(--ink)}
+  .check{color:var(--ink)}
+  .plan.hot{background:rgba(245,242,236,.06);border-color:rgba(245,242,236,.3);color:var(--ink)}
+  .cov-card:hover,.cov-card.active{border-color:rgba(245,242,236,.42)}
+  .cov-card:after{content:'';position:absolute;left:24px;bottom:18px;width:0;height:1px;background:var(--signal);transition:width .5s cubic-bezier(.16,1,.3,1)}
+  .cov-card:hover:after,.cov-card.active:after{width:34px}
+  .hero-orb{box-shadow:0 0 130px rgba(255,255,255,.035),inset 0 0 70px rgba(255,255,255,.025)}
+  .hero-orb:after{border-color:rgba(255,255,255,.12)}
+  .ticker .accent{color:var(--ink)!important}
+  .ticker-track b{font-weight:800}
+  .help-card:before,.cov-card:before,.article:before,.t-card:before{background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.075),transparent 34%)}
+  .process:before{background:var(--ink)}
+  .claims.in .step:after{background:var(--ink)}
+  .field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(245,242,236,.55)}
+  .field:focus-within input,.field:focus-within textarea,.field:focus-within select{box-shadow:0 0 0 4px rgba(245,242,236,.045)}
+  .cursor-dot{background:var(--signal)}
+  .nav-links a:after{background:var(--signal)}
+  .section-index b{color:var(--ink)!important}
+
+  /* More editorial typography choreography */
+  .hero-title span{overflow:hidden;clip-path:inset(0 0 100% 0);transform:translateY(105%);transition:clip-path 1.05s cubic-bezier(.16,1,.3,1),transform 1.05s cubic-bezier(.16,1,.3,1)}
+  .hero-ready .hero-title span:nth-child(1){transition-delay:.08s}.hero-ready .hero-title span:nth-child(2){transition-delay:.17s}.hero-ready .hero-title span:nth-child(3){transition-delay:.26s}
+  .hero-ready .hero-title span{clip-path:inset(0 0 0 0);transform:none}
+  .display,.lead h2,.visual-card h2{text-wrap:balance}
+  .porto-reveal{opacity:0;transform:translateY(46px);filter:blur(7px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1),filter 1s cubic-bezier(.16,1,.3,1)}
+  .porto-reveal.in{opacity:1;transform:none;filter:none}
+  .display.porto-reveal,.lead h2.porto-reveal{transition-duration:1.15s}
+  .display.porto-reveal:after{content:'';display:block}
+  .editorial-marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin-top:35px;opacity:.9}
+  .editorial-marquee-track{display:flex;width:max-content;gap:5vw;animation:editorialMove 28s linear infinite}
+  .editorial-marquee span{font-family:'Barlow Condensed';font-size:clamp(55px,8vw,120px);font-weight:800;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(245,242,236,.28);white-space:nowrap}
+  .editorial-marquee span:nth-child(2n){color:var(--ink);-webkit-text-stroke:0}
+  @keyframes editorialMove{to{transform:translateX(-50%)}}
+  .section-index{position:absolute;right:28px;top:38px;font-size:10px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg)}
+  .section-index b{font-weight:600;margin-bottom:8px}
+  .editorial-rail{position:fixed;right:22px;top:50%;z-index:35;display:grid;gap:7px;transform:translateY(-50%)}
+  .editorial-rail span{display:block;width:3px;height:3px;border-radius:50%;background:rgba(245,242,236,.3);transition:height .35s,width .35s,background .35s}
+  .editorial-rail span.active{width:18px;background:var(--ink)}
+  .page-progress{height:1px!important;background:var(--ink)!important}
+  @media(max-width:680px){.section-index{right:14px}.editorial-rail{display:none}.editorial-marquee span{font-size:17vw}.btn.fill:after{display:none}}
+</style>
+
+<style id="hero-understand-accent">
+/* Hero brand moment: keep the accent exclusively on UNDERSTAND. */
+.hero-title .accent{color:var(--accent)!important}
+</style>
+
+<style id="minimal-accent-revision">
+/* Minimal accent revision: typography + motion lead; orange is reserved for the hero keyword and tiny signals. */
+.btn.fill{background:var(--ink);border-color:var(--ink);color:#090909}
+.btn.fill:hover{background:#fff;border-color:#fff}
+.ticker .accent,.display .accent,.claims .display .accent,.visual-card h2 span,.lead h2 span,.footer-cta h2 .accent{color:var(--ink)}
+.hero-title .accent{color:var(--accent)}
+.compare .plan.hot{background:#151515;border-color:var(--line);color:var(--ink)}
+.check{color:var(--ink)}
+.visual-card h2 span{color:var(--ink)}
+.quote{border-left-color:var(--line)}
+.field:focus-within label{color:var(--ink)}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(244,241,235,.65);box-shadow:0 0 0 1px rgba(244,241,235,.35)}
+.cov-card:after{background:var(--ink)}
+.process:before{background:var(--ink)}
+.article a:after{background:var(--ink)}
+.step:hover .num{color:var(--ink)}
+.editorial-marquee span:nth-child(even){color:var(--ink);-webkit-text-stroke:1px var(--ink)}
+.section-index b,.meta-num{color:var(--muted)}
+.cursor-dot{background:var(--ink)}
+.cursor-ring.active{border-color:var(--ink);background:rgba(244,241,235,.04)}
+.cursor-active + .cursor-ring{border-color:var(--ink)}
+.scroll-cue:after{background:var(--ink)}
+.page-progress{background:var(--ink);box-shadow:none}
+.loader-mark span:nth-child(2){color:var(--ink)}
+/* Keep the one intentional brand flash: UNDERSTAND. */
+.hero-title .accent{color:var(--accent)!important}
+</style>
+
+<style id="final-desktop-type-motion-pass">
+
+/* White-outline treatment for the two scrolling editorial bands. */
+.ticker-track .outline-word{
+  color:transparent !important;
+  -webkit-text-stroke:1.35px #fff !important;
+  text-shadow:none !important;
+}
+.editorial-marquee .outline-word{
+  color:transparent !important;
+  -webkit-text-stroke:1.35px #fff !important;
+  text-shadow:none !important;
+}
+
+/* FINAL PASS — typography-first hero, restrained signal orange, longer coverage scroll, desktop tuning */
+:root{--desktop-max:1680px}
+.shell,.hero .shell{width:min(calc(100% - 80px),var(--desktop-max))}
+
+/* Hero: one-line, centered statement on desktop */
+.hero{min-height:100svh;align-items:center;padding:130px 0 54px;text-align:center}
+.hero .shell{display:flex;flex-direction:column;align-items:center}
+.hero-top{width:100%;margin-bottom:46px}
+.hero-top .kicker:last-child{justify-content:flex-end}
+.hero-copy{width:100%;max-width:none;display:flex;flex-direction:column;align-items:center}
+.hero-title{width:100%;font-size:clamp(58px,8.35vw,172px);line-height:.84;letter-spacing:-.052em;white-space:nowrap;text-align:center}
+.hero-title span{display:inline}
+.hero-title span:not(:last-child)::after{content:' ';white-space:pre}
+.hero-title .accent{color:var(--accent)!important}
+.hero-sub{width:min(100%,920px);margin:34px auto 30px;grid-template-columns:1fr 1fr;text-align:left}
+.hero-actions{justify-content:center}
+.hero-metadata{width:min(100%,1160px);margin-top:64px;text-align:left}
+
+/* The moving mantra: one outlined phrase becomes the visual punctuation. */
+.ticker{position:relative;background:#090909}
+.ticker-track{padding:21px 0;gap:0;font-size:clamp(20px,2vw,30px);animation-duration:30s}
+.ticker-track b{font-weight:800}
+.ticker-track .outline-word{color:transparent;-webkit-text-stroke:1px rgba(245,242,236,.9);text-shadow:none}
+.ticker-track span{color:rgba(245,242,236,.22);margin:0 22px}
+
+/* Coverage becomes a long editorial scroll stage. Left title stays pinned; right content remains high contrast. */
+.coverage{padding:0}
+.coverage-grid{width:min(calc(100% - 80px),var(--desktop-max));margin:0 auto;grid-template-columns:minmax(340px,.72fr) minmax(620px,1.28fr);gap:clamp(70px,8vw,150px);min-height:220vh;align-items:start}
+.coverage-grid>.sticky-title{position:sticky;top:18vh;padding-top:18vh;z-index:3}
+.coverage-grid>.reveal{position:sticky;top:11vh;min-height:78vh;padding-top:11vh;display:flex;flex-direction:column;justify-content:center}
+.coverage-tabs{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cov-card{min-height:190px;padding:25px;background:#141414;border-color:rgba(245,242,236,.18);color:var(--ink);box-shadow:none}
+.cov-card h4{color:#fff}
+.cov-card p{color:#bcb8b0}
+.cov-card:hover,.cov-card.active{border-color:rgba(245,242,236,.6);box-shadow:0 20px 60px rgba(0,0,0,.28);transform:translateY(-5px)}
+.cov-card:after{background:var(--accent);height:2px}
+.cov-panel{background:#151515;border-color:rgba(245,242,236,.22);padding:34px;min-height:300px}
+.cov-panel p,.why div{color:#ddd9d2}
+.cov-panel-title{font-size:clamp(42px,4vw,70px)}
+.why{grid-template-columns:120px 1fr}
+
+/* Desktop rhythm and readable side columns */
+.section{padding:clamp(130px,10vw,190px) 0}
+.split{grid-template-columns:minmax(0,1.05fr) minmax(380px,.72fr);gap:clamp(70px,8vw,140px)}
+.display{font-size:clamp(62px,6.8vw,124px)}
+.body{font-size:16px;max-width:620px}
+.help-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.visual-card{min-height:min(70vh,720px)}
+.compare-wrap{max-width:1500px}
+.quote-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.editorial{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lead-grid{grid-template-columns:minmax(0,1.05fr) minmax(440px,.72fr);gap:clamp(80px,8vw,150px)}
+
+@media (max-width:1200px){
+  .shell,.hero .shell,.coverage-grid{width:min(calc(100% - 56px),1440px)}
+  .hero-title{font-size:clamp(54px,8.15vw,125px)}
+  .coverage-grid{grid-template-columns:minmax(290px,.65fr) minmax(520px,1.35fr);gap:60px}
+}
+@media (max-width:1050px){
+  .hero{align-items:flex-end;text-align:left}
+  .hero .shell{align-items:stretch}
+  .hero-title{text-align:left;white-space:normal}
+  .hero-title span{display:block}
+  .hero-title span:not(:last-child)::after{content:none}
+  .hero-top .kicker:last-child{justify-content:flex-start}
+  .hero-sub{width:100%;text-align:left}
+  .hero-actions{justify-content:flex-start}
+  .coverage-grid{min-height:auto;display:grid}
+  .coverage-grid>.sticky-title,.coverage-grid>.reveal{position:relative;top:auto;padding-top:0;min-height:auto}
+}
+@media (max-width:680px){
+  .shell,.hero .shell,.coverage-grid{width:min(calc(100% - 28px),var(--desktop-max))}
+  .hero{padding:115px 0 30px}
+  .hero-title{font-size:24vw;line-height:.8}
+  .ticker-track{font-size:17vw;padding:12px 0}
+  .ticker-track .outline-word{-webkit-text-stroke:.7px rgba(245,242,236,.85)}
+  .coverage-grid{padding:95px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .ticker-track{animation:none!important}
+}
+</style>
+
+<style id="user-reference-final-pass">
+/* Reference-matched final visual pass */
+.hero-title{
+  width:100%;
+  max-width:none;
+  font-size:clamp(48px,7.15vw,158px);
+  line-height:.82;
+  letter-spacing:-.055em;
+  white-space:nowrap;
+  text-align:center;
+  transform-origin:center;
+}
+.hero-copy{width:100%;}
+.hero-title .accent{color:var(--accent)!important;}
+
+/* Make the scrolling typography read like the reference: monochrome, crisp, outlined. */
+.ticker-track b{
+  color:transparent;
+  -webkit-text-stroke:1px rgba(245,242,236,.82);
+  text-shadow:none;
+}
+.ticker-track b:nth-of-type(odd){
+  color:var(--ink);
+  -webkit-text-stroke:0;
+}
+.ticker-track .outline-word{
+  color:transparent!important;
+  -webkit-text-stroke:1px rgba(245,242,236,.92);
+}
+.editorial-marquee span{
+  color:transparent!important;
+  -webkit-text-stroke:1.25px rgba(245,242,236,.86)!important;
+}
+.editorial-marquee span:nth-child(4n+2){
+  color:var(--ink)!important;
+  -webkit-text-stroke:0!important;
+}
+.editorial-marquee span.outline-word{
+  color:transparent!important;
+  -webkit-text-stroke:1.35px #fff!important;
+}
+
+/* Reveal more of the car while preserving cinematic contrast. */
+.visual-card{
+  background-image:linear-gradient(90deg,rgba(0,0,0,.54) 0%,rgba(0,0,0,.25) 38%,rgba(0,0,0,.08) 70%,rgba(0,0,0,.16) 100%),url('https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1800&q=86');
+  background-size:cover;
+  background-position:center;
+}
+.visual-break .visual-card:after{
+  background:linear-gradient(120deg,rgba(0,0,0,.08),transparent 42%,rgba(0,0,0,.16));
+  mix-blend-mode:normal;
+}
+
+/* Keep the desktop hero truly centered and prevent accidental horizontal overflow. */
+@media (min-width:1201px){
+  .hero .shell{width:min(calc(100% - 96px),1680px);}
+  .hero-title{font-size:clamp(48px,7.05vw,158px);}
+}
+@media (min-width:1600px){
+  .hero-title{font-size:clamp(52px,6.8vw,158px);}
+}
+@media (max-width:1050px){
+  .hero-title{white-space:normal;}
+}
+</style>
+
+<style id="final-visual-fix">
+/* FINAL VISUAL FIX — full vehicle hero image + restrained motion */
+.hero{position:relative;isolation:isolate}
+.hero-car{position:absolute;z-index:1;right:-2vw;top:9vh;width:min(58vw,1120px);height:79vh;pointer-events:none;overflow:hidden;border-radius:0 0 0 44%;opacity:1;mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.55) 10%,#000 25%,#000 100%)}
+.hero-car-image{position:absolute;inset:-5%;background-image:linear-gradient(90deg,rgba(9,9,9,.96) 0%,rgba(9,9,9,.72) 14%,rgba(9,9,9,.28) 36%,rgba(9,9,9,.04) 60%,rgba(9,9,9,0) 78%),linear-gradient(0deg,rgba(9,9,9,.3),transparent 45%),url('https://images.unsplash.com/photo-1744719256525-3deab6fd16ac?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=3000');background-size:cover;background-position:center right;filter:contrast(1.06) saturate(.72);transform:scale(1.05);transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
+.hero:hover .hero-car-image{transform:scale(1.085) translate3d(-8px,-3px,0)}
+.hero-car:after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 72% 52%,transparent 0 23%,rgba(0,0,0,.1) 48%,rgba(0,0,0,.38) 100%)}
+.hero-title,.hero-sub,.hero-actions,.hero-metadata{position:relative;z-index:3}.hero-orb{z-index:0;opacity:.55}
+.ticker{border-top:1px solid rgba(255,255,255,.82);border-bottom:1px solid rgba(255,255,255,.82)}
+.ticker .outline-word{color:transparent!important;-webkit-text-stroke:1px #fff!important;text-shadow:none!important}
+.editorial-marquee{border-top:1px solid rgba(255,255,255,.82)!important;border-bottom:1px solid rgba(255,255,255,.82)!important}
+.editorial-marquee span.outline-word{color:transparent!important;-webkit-text-stroke:1px #fff!important;text-shadow:none!important}
+@media (min-width:1200px){.hero-car{right:-1vw;width:min(60vw,1160px);height:80vh;top:8vh}.hero-title{font-size:clamp(64px,7.05vw,158px);letter-spacing:-.055em}}
+@media (min-width:1600px){.hero-car{width:min(58vw,1200px);right:0}.hero-title{font-size:clamp(72px,6.7vw,164px)}}
+@media (max-width:1050px){.hero-car{width:72vw;height:60vh;right:-18vw;top:17vh;opacity:.5;mask-image:linear-gradient(to right,transparent,#000 42%,#000)}.hero-title{position:relative;z-index:4}}
+@media (max-width:680px){.hero-car{width:120vw;height:52vh;right:-48vw;top:23vh;opacity:.38}.hero-car-image{background-position:center right}}
+</style>
+</head>
+<body>
+<div class="preloader" aria-hidden="true"><div class="loader-mark"><span>Customer</span><span>First</span></div></div><div class="page-progress"></div><div class="spotlight"></div><div class="noise"></div><div class="cursor-dot"></div><div class="cursor-ring"></div>
+<header class="site-nav"><div class="shell nav-inner"><div class="brand-badge">Customer First<br>Marketing Service</div><nav class="nav-links" aria-label="Primary"><a href="#about">About</a><a href="#coverage">Coverage</a><a href="#claims">Claims</a><a href="#explained">Insurance Explained</a><a href="#contact">Contact</a></nav><a class="nav-cta magnetic" href="#contact">Talk to an advisor</a></div></header>
+<main id="top">
+<section class="hero"><div class="scroll-cue">Scroll to explore</div><div class="grid-bg"></div><div class="hero-orb"></div><div class="hero-car" aria-hidden="true"><div class="hero-car-image"></div></div><div class="shell"><div class="hero-top"><div class="kicker">Guidance before you buy</div></div><div class="hero-copy reveal"><h1 class="hero-title">INSURANCE<span>YOU</span><span class="accent">UNDERSTAND.</span></h1><div class="hero-sub"><p>Compare smarter. Understand your coverage. Drive with confidence.</p><p class="micro">We help you understand what your car insurance covers, what it doesn’t, and which option makes sense for you.</p></div><div class="hero-actions"><a class="btn fill large magnetic" href="#comparison">Compare your options <span>→</span></a><a class="btn large" href="#contact">Talk to an advisor</a></div></div><div class="hero-metadata reveal"><div class="meta"><div class="meta-num">01</div><strong>Compare</strong><span>Compare plans beyond just price.</span></div><div class="meta"><div class="meta-num">02</div><strong>Understand</strong><span>Know your coverage before you buy.</span></div><div class="meta"><div class="meta-num">03</div><strong>Claim support</strong><span>Get guidance when you need to claim.</span></div></div></div></section>
+<div class="ticker"><div class="ticker-track"><b>COMPARE</b><span>×</span><b class="accent">UNDERSTAND</b><span>×</span><b class="outline-word">CHOOSE NO SURPRISES</b><span>×</span><b>WITH CONFIDENCE</b><span>×</span><b>COMPARE</b><span>×</span><b class="accent">UNDERSTAND</b><span>×</span><b class="outline-word">CHOOSE NO SURPRISES</b><span>×</span><b>WITH CONFIDENCE</b><span>×</span></div></div>
+<section class="section"><div class="shell split reveal"><div><div class="eyebrow">01 / The problem</div><h2 class="display">THE CHEAPEST POLICY<br>ISN’T ALWAYS THE<br><span class="accent">BEST PROTECTION.</span></h2></div><div><p class="body">Insurance plans come with different features, limits and exclusions. When customers focus only on price, they may unknowingly choose limited coverage — and discover the difference only when they need to make a claim.</p><div class="rule"></div><div class="eyebrow">That’s why we exist.</div><p class="body">Customer First Marketing Services was founded to close this gap. We help customers understand what they are buying and how their policy can help them when it matters most.</p></div></div></section>
+<section class="section help"><div class="shell"><div class="reveal"><div class="eyebrow">02 / How we help</div><h2 class="display">A BETTER WAY<br>TO <span class="accent">CHOOSE.</span></h2></div><div class="help-grid reveal"><div class="help-card"><div class="num">01</div><div><h3>Discover</h3><p>Understand what you need. We start with your car, requirements and priorities.</p></div></div><div class="help-card"><div class="num">02</div><div><h3>Compare</h3><p>Look beyond the premium. Compare coverage, features and important limitations.</p></div></div><div class="help-card"><div class="num">03</div><div><h3>Choose</h3><p>Choose with confidence. We explain the details behind the decision.</p></div></div><div class="help-card"><div class="num">04</div><div><h3>Claim</h3><p>Support when it matters. Get guidance through the claim process.</p></div></div></div></div></section>
+<section class="section coverage" id="coverage"><div class="shell coverage-grid"><div class="sticky-title reveal"><div class="eyebrow">03 / Coverage</div><h2 class="display">WHAT ARE YOU<br><span class="accent">ACTUALLY</span><br>BUYING?</h2><p class="body">No jargon wall. No guessing. Explore the coverages and add-ons people usually compare before they make a decision.</p></div><div class="reveal"><div class="coverage-tabs" id="coverageTabs"></div><div class="cov-panel" id="coveragePanel"></div></div></div></section>
+<section class="section compare" id="comparison"><div class="shell reveal"><div class="eyebrow">04 / Compare</div><h2 class="display">PRICE IS ONLY<br>ONE PART OF THE<br><span class="accent">DECISION.</span></h2><p class="body">We help you understand the difference before you choose. This is a conceptual comparison — actual options depend on your requirements and available plans.</p><div class="compare-wrap"><table><thead><tr><th>What to compare</th><th><span class="plan">Option 01</span></th><th><span class="plan hot">Option 02</span></th><th><span class="plan">Option 03</span></th></tr></thead><tbody><tr><td>Premium</td><td>Lower</td><td>Mid</td><td>Higher</td></tr><tr><td>Coverage</td><td>Core</td><td>Broader</td><td>Broader+</td></tr><tr><td>Deductibles</td><td>Review</td><td>Review</td><td>Review</td></tr><tr><td>Add-ons</td><td>Selected</td><td>More</td><td>More</td></tr><tr><td>Exclusions</td><td>Check</td><td>Check</td><td>Check</td></tr><tr><td>Claim support</td><td><span class="check">●</span></td><td><span class="check">●</span></td><td><span class="check">●</span></td></tr><tr><td>Policy benefits</td><td>Standard</td><td>Enhanced</td><td>Enhanced</td></tr></tbody></table></div><div style="margin-top:26px"><a class="btn fill large magnetic" href="#contact">Talk to an advisor →</a></div></div></section>
+<section class="visual-break"><div class="shell reveal"><div class="visual-card"><div><div class="eyebrow">Customer-first by design</div><h2>Coverage that<br>makes sense.<br><span>Not surprises.</span></h2></div></div></div></section>
+<section class="section claims" id="claims"><div class="shell reveal"><div class="eyebrow">05 / Claims assistance</div><div class="split"><div><h2 class="display">WHEN SOMETHING<br>GOES WRONG,<br><span class="accent">WE’RE HERE.</span></h2></div><div><p class="body">Insurance matters most when you need to use it. Our team helps customers understand the claim process and guides them through the necessary steps.</p><p class="micro" style="color:#69645d;margin-top:20px">We do not promise claim approval, guaranteed settlement, or any outcome outside our control.</p></div></div><div class="process"><div class="step"><div class="num">01</div><h3>Report</h3><p>Understand what needs to be communicated and when.</p></div><div class="step"><div class="num">02</div><h3>Document</h3><p>Get clarity on the information and documents to prepare.</p></div><div class="step"><div class="num">03</div><h3>Guide</h3><p>Move through the process with practical guidance.</p></div><div class="step"><div class="num">04</div><h3>Resolve</h3><p>Follow the next steps and stay informed along the way.</p></div></div><div style="margin-top:30px"><a class="btn" href="#contact">Get claim guidance →</a></div></div></section>
+<section class="section" id="explained"><div class="shell reveal"><div class="eyebrow">06 / Insurance explained</div><h2 class="display">INSURANCE,<br><span class="accent">WITHOUT</span> THE<br>JARGON.</h2><div class="editorial"><article class="article"><span class="idx">01</span><div><h3>Understanding IDV</h3><p>Why the insured declared value of your car matters.</p></div><a href="#contact">Read more →</a></article><article class="article"><span class="idx">02</span><div><h3>Comprehensive vs third-party</h3><p>A simple way to understand the difference.</p></div><a href="#contact">Read more →</a></article><article class="article"><span class="idx">03</span><div><h3>What add-ons actually do</h3><p>Zero depreciation, roadside assistance and more — in plain language.</p></div><a href="#contact">Read more →</a></article><article class="article"><span class="idx">04</span><div><h3>Common coverage exclusions</h3><p>The details you should know before renewal or purchase.</p></div><a href="#contact">Read more →</a></article><article class="article"><span class="idx">05</span><div><h3>Before you renew</h3><p>A practical checklist for comparing your next policy.</p></div><a href="#contact">Read more →</a></article><article class="article"><span class="idx">06</span><div><h3>How car insurance claims work</h3><p>What typically happens after an incident.</p></div><a href="#contact">Read more →</a></article></div></div></section>
+<section class="section about" id="about"><div class="shell"><div class="about-grid reveal"><div><div class="eyebrow">07 / About us</div><h2 class="display">CUSTOMER FIRST<br>ISN’T JUST OUR NAME.<br><span class="accent">IT’S OUR APPROACH.</span></h2><p class="body" style="margin-top:32px">Insurance can be complicated. Our role is to make it easier to understand. We believe customers deserve to know what they are buying, what their coverage means, and how their policy can help when they need it.</p><div class="pill-row"><span class="pill">Compare.</span><span class="pill">Understand.</span><span class="pill">Choose.</span><span class="pill">Confidently.</span></div></div><div><div class="quote">“These people aren’t just trying to sell me insurance. They want me to understand what I’m buying.”</div><p class="micro" style="margin-top:18px">The experience we aim to create.</p></div></div></div></section>
+<section class="section testimonials"><div class="shell reveal"><div class="eyebrow">08 / Customer voice</div><h2 class="display">REAL CLARITY.<br><span class="accent">NO HYPE.</span></h2><div class="quote-grid"><article class="t-card"><blockquote>“Instead of simply showing me the cheapest option, they explained the differences between the policies.”</blockquote><footer>— Rahul S. / Placeholder customer</footer></article><article class="t-card"><blockquote>“I finally understood what my insurance actually covered before I renewed it.”</blockquote><footer>— Priya M. / Placeholder customer</footer></article><article class="t-card"><blockquote>“The claim guidance made the process feel much less confusing.”</blockquote><footer>— Arjun K. / Placeholder customer</footer></article></div><p class="micro" style="margin-top:18px">Testimonials shown here are editable placeholders and should be replaced with verified customer feedback.</p></div></section>
+<section class="lead" id="contact"><div class="shell lead-grid reveal"><div><div class="eyebrow">09 / Get in touch</div><h2>LET’S FIND THE<br>RIGHT <span>COVERAGE</span><br>FOR YOUR CAR.</h2><p class="body" style="margin-top:28px">Tell us what you need. Our team will help you understand your options.</p><div class="contact-quick"><a class="btn" href="tel:+910000000000">Call us</a><a class="btn" href="https://wa.me/910000000000" target="_blank" rel="noreferrer">WhatsApp us</a></div></div><form class="lead-form" onsubmit="event.preventDefault(); alert('Demo form — connect this to your CRM/backend.');"><div class="form-grid"><div class="field"><label for="name">Full name</label><input id="name" name="name" required autocomplete="name" /></div><div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" required inputmode="tel" autocomplete="tel" /></div></div><div class="form-grid"><div class="field"><label for="wa">WhatsApp number</label><input id="wa" name="whatsapp" inputmode="tel" autocomplete="tel" /></div><div class="field"><label for="intent">New insurance / renewal</label><select id="intent" name="intent"><option>New insurance</option><option>Renewal</option><option>Just comparing</option><option>Need claim guidance</option></select></div></div><div class="field"><label for="reg">Car registration number (optional)</label><input id="reg" name="registration" autocomplete="off" /></div><div class="field"><label for="msg">Message (optional)</label><textarea id="msg" name="message" placeholder="Tell us a little about what you’re looking for…"></textarea></div><button class="btn fill large magnetic" type="submit">Request a callback →</button><p class="micro">By submitting, you are requesting contact from Customer First Marketing Services. Add your actual privacy/consent language before launch.</p></form></div></section>
+</main>
+<footer class="footer-cta"><div class="shell"><div class="reveal"><div class="eyebrow">Customer First Marketing Services / Car Insurance Guidance</div><h2>DON’T JUST<br>BUY INSURANCE.<br><span class="accent">UNDERSTAND IT.</span></h2><div style="margin-top:34px"><a class="btn fill large magnetic" href="#contact">Talk to an advisor →</a></div></div><div class="footer-bottom"><div><h4>Customer First Marketing Services</h4><p>Car insurance guidance, comparison and claims assistance.</p></div><div><h4>Explore</h4><a href="#about">About us</a><a href="#coverage">Coverage</a><a href="#claims">Claims assistance</a><a href="#explained">Insurance explained</a><a href="#contact">Contact</a></div><div><h4>Contact</h4><p>Phone — [replace]</p><p>WhatsApp — [replace]</p><p>Email — [replace]</p><p>Address — [replace]</p><p style="margin-top:18px">Privacy Policy · Terms & Conditions · Disclaimer</p></div></div></div></footer>
+<script>
+const coverages=[
+ ['Comprehensive Coverage','Broader protection for your own car plus third-party liability, subject to the policy terms.','Why it matters:','It can protect against a wider range of risks than liability-only cover.','Example:','Your car is damaged in an accident; the policy may respond based on covered events and conditions.','Important consideration:','Always review deductibles, exclusions, limits and add-ons.'],
+ ['Third-Party Liability','Covers legal liability to third parties, subject to applicable policy terms and law.','Why it matters:','It addresses your responsibility toward others when you are legally liable.','Example:','You cause damage to another vehicle; third-party cover may respond to the covered liability.','Important consideration:','It does not by itself provide own-damage protection for your car.'],
+ ['Own Damage','Protection for covered damage to your own insured vehicle.','Why it matters:','It can help with eligible repair costs after covered incidents.','Example:','Your parked car is damaged by a covered event; the policy may pay eligible repair costs after applicable deductions.','Important consideration:','Check exclusions and deductibles before assuming every repair is covered.'],
+ ['Zero Depreciation','An add-on designed to reduce the impact of depreciation on certain eligible parts, subject to terms.','Why it matters:','It can reduce out-of-pocket deductions on eligible claims.','Example:','A covered repair uses parts where depreciation would otherwise be applied.','Important consideration:','It has eligibility, limits and claim conditions.'],
+ ['Roadside Assistance','Support for defined roadside situations such as breakdown-related assistance, subject to plan terms.','Why it matters:','Useful when a vehicle issue leaves you stranded.','Example:','A covered breakdown occurs during a trip and you request eligible assistance.','Important consideration:','Check service limits, towing distance and geographic scope.'],
+ ['Engine Protection','An add-on intended to cover specified engine-related risks that may sit outside standard own-damage cover, subject to terms.','Why it matters:','Engine repairs can be expensive, so the specific scope matters.','Example:','A qualifying water-ingress-related event occurs and the add-on conditions are met.','Important consideration:','Coverage can have exclusions and specific maintenance or incident conditions.'],
+ ['Personal Accident Cover','Provides benefits for defined accidental injury or death scenarios, subject to policy terms and applicable law.','Why it matters:','It can add a personal layer of financial protection.','Example:','A covered accidental injury triggers a benefit under the policy terms.','Important consideration:','Review insured amounts, eligibility and exclusions.'],
+ ['Consumables Cover','An add-on that may cover specified consumable items used during eligible repairs, subject to terms.','Why it matters:','These small line items can add up during a claim.','Example:','Covered repair work requires eligible consumables listed in the policy.','Important consideration:','Check the eligible list and claim limits.'],
+ ['Return to Invoice','An add-on that may bridge the gap toward the invoice value in certain total-loss or theft scenarios, subject to terms.','Why it matters:','It can reduce the impact of vehicle value depreciation in defined situations.','Example:','A qualifying total-loss or theft claim is settled under the add-on terms.','Important consideration:','The benefit is conditional and does not mean every cost is automatically reimbursed.']
+];
+const tabs=document.getElementById('coverageTabs'),panel=document.getElementById('coveragePanel');
+function renderCoverage(i){const c=coverages[i];panel.innerHTML=`<h3 class="cov-panel-title">${c[0]}</h3><p>${c[1]}</p><div class="why"><label>${c[2]}</label><div>${c[3]}</div></div><div class="why"><label>${c[4]}</label><div>${c[5]}</div></div><div class="why"><label>${c[6]}</label><div>${c[7]}</div></div>`;document.querySelectorAll('.cov-card').forEach((el,j)=>el.classList.toggle('active',j===i));panel.animate([{opacity:.2,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],{duration:420,easing:'cubic-bezier(.16,1,.3,1)'});}
+coverages.forEach((c,i)=>{const b=document.createElement('button');b.className='cov-card';b.type='button';b.innerHTML=`<h4>${c[0]}</h4><p>${c[1]}</p>`;b.addEventListener('click',()=>renderCoverage(i));tabs.appendChild(b)});renderCoverage(0);
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const nav=document.querySelector('.site-nav'),progress=document.querySelector('.page-progress'),spot=document.querySelector('.spotlight');
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revealObserver.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+document.querySelectorAll('.reveal,.reveal-stagger,.process').forEach(el=>revealObserver.observe(el));
+
+window.addEventListener('load',()=>{setTimeout(()=>document.querySelector('.preloader')?.classList.add('hide'),500);setTimeout(()=>document.body.classList.add('hero-ready'),650)});
+
+let ticking=false;function updateScroll(){const y=scrollY,max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max?y/max*100:0)+'%';nav.classList.toggle('scrolled',y>40);if(!reduce){const orb=document.querySelector('.hero-orb'),grid=document.querySelector('.grid-bg'),copy=document.querySelector('.hero-copy');if(orb)orb.style.transform=`translate3d(0,${y*.08}px,0) rotate(19deg)`;if(grid)grid.style.transform=`translate3d(0,${y*.035}px,0)`;if(copy&&y<innerHeight)copy.style.transform=`translate3d(0,${y*.055}px,0)`}ticking=false}window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateScroll);ticking=true}},{passive:true});updateScroll();
+
+let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;const dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring');
+if(!reduce&&matchMedia('(pointer:fine)').matches){window.addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;if(dot){dot.style.left=mx+'px';dot.style.top=my+'px'}if(spot){spot.style.left=mx+'px';spot.style.top=my+'px'}});function cursorRAF(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;if(ring){ring.style.left=rx+'px';ring.style.top=ry+'px'}requestAnimationFrame(cursorRAF)}cursorRAF()}
+
+document.querySelectorAll('a,button,input,textarea,select').forEach(el=>{el.addEventListener('mouseenter',()=>ring?.classList.add('active'));el.addEventListener('mouseleave',()=>ring?.classList.remove('active'));el.addEventListener('click',e=>{if(reduce)return;const r=el.getBoundingClientRect(),rip=document.createElement('i');rip.className='ripple';rip.style.left=(e.clientX-r.left)+'px';rip.style.top=(e.clientY-r.top)+'px';el.appendChild(rip);setTimeout(()=>rip.remove(),650)})});
+
+if(!reduce){document.querySelectorAll('.magnetic').forEach(el=>{el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)*.18,y=(e.clientY-r.top-r.height/2)*.18;el.style.transform=`translate3d(${x}px,${y}px,0)`});el.addEventListener('mouseleave',()=>el.style.transform='')});
+ document.querySelectorAll('.t-card,.help-card,.article').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateX(${y*-3}deg) rotateY(${x*3}deg) translateY(-7px)`});card.addEventListener('mouseleave',()=>card.style.transform='')});
+}
+
+// Smooth anchor travel without hijacking external links.
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');const target=document.querySelector(id);if(target){e.preventDefault();target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}}));
+</script>
+
+<script id="porto-motion-upgrade-js">
+(()=>{
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const sections=[...document.querySelectorAll('main > section')];
+ const rail=document.createElement('div'); rail.className='editorial-rail'; rail.setAttribute('aria-hidden','true');
+ sections.forEach((s,i)=>{const d=document.createElement('span');d.dataset.index=i;rail.appendChild(d);}); document.body.appendChild(rail);
+
+ // Add Porto-style section number to major sections.
+ const numbered=[...document.querySelectorAll('main > section')];
+ numbered.forEach((s,i)=>{if(!s.querySelector('.section-index')){const x=document.createElement('div');x.className='section-index';x.innerHTML='<b>'+String(i+1).padStart(2,'0')+'</b> / CUSTOMER FIRST';s.appendChild(x)}});
+
+ // Reveal children with editorial staggering.
+ document.querySelectorAll('.display,.lead h2,.eyebrow,.body,.quote,.visual-card,.help-grid,.coverage-tabs,.cov-panel,.editorial,.quote-grid,.lead-form,.about-grid,.process').forEach(el=>el.classList.add('porto-reveal'));
+ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+ document.querySelectorAll('.porto-reveal').forEach(el=>io.observe(el));
+
+ // Section rail state.
+ const sio=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){const i=sections.indexOf(e.target);rail.querySelectorAll('span').forEach((x,j)=>x.classList.toggle('active',j===i))}}),{threshold:.35});
+ sections.forEach(s=>sio.observe(s));
+
+ // Mouse-reactive cards.
+ if(!reduce && matchMedia('(pointer:fine)').matches){
+  document.querySelectorAll('.help-card,.cov-card,.article,.t-card').forEach(card=>{
+   card.addEventListener('pointermove',e=>{
+    const r=card.getBoundingClientRect(),mx=((e.clientX-r.left)/r.width)*100,my=((e.clientY-r.top)/r.height)*100;
+    card.style.setProperty('--mx',mx+'%');card.style.setProperty('--my',my+'%');
+    if(card.classList.contains('cov-card')) return;
+    const x=((e.clientX-r.left)/r.width-.5)*3,y=((e.clientY-r.top)/r.height-.5)*-3;
+    card.style.transform=`perspective(1000px) rotateX(${y}deg) rotateY(${x}deg) translateY(-6px)`;
+   });
+   card.addEventListener('pointerleave',()=>card.style.transform='');
+  });
+ }
+
+ // Parallax image tied to viewport position.
+ if(!reduce){
+  const visual=document.querySelector('.visual-card');
+  const parallax=()=>{if(!visual)return;const r=visual.getBoundingClientRect(),vh=innerHeight;const p=(vh/2-(r.top+r.height/2))/vh;visual.style.backgroundPosition=`${50+p*7}% ${50-p*10}%`};
+  addEventListener('scroll',()=>requestAnimationFrame(parallax),{passive:true});parallax();
+ }
+
+ // Add an editorial marquee after the philosophy section.
+ const problem=[...document.querySelectorAll('.section')].find(s=>s.querySelector('.eyebrow')?.textContent.includes('The problem'));
+ if(problem && !document.querySelector('.editorial-marquee')){
+  const m=document.createElement('div');m.className='editorial-marquee';m.innerHTML='<div class="editorial-marquee-track"><span>COMPARE</span><span>UNDERSTAND</span><span class="outline-word">CHOOSE</span><span class="outline-word">NO SURPRISES</span><span>COMPARE</span><span>UNDERSTAND</span><span class="outline-word">CHOOSE</span><span class="outline-word">NO SURPRISES</span></div>';
+  problem.after(m);
+ }
+
+ // Make the coverage panel feel like a content transition rather than a hard swap.
+ const panel=document.getElementById('coveragePanel');
+ if(panel){const observer=new MutationObserver(()=>{if(reduce)return;panel.animate([{opacity:.25,filter:'blur(8px)',transform:'translateY(14px)'},{opacity:1,filter:'blur(0)',transform:'translateY(0)'}],{duration:520,easing:'cubic-bezier(.16,1,.3,1)'});});observer.observe(panel,{childList:true,subtree:true});}
+})();
+</script>
+
+<script id="final-coverage-scroll-motion">
+(()=>{
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduce)return;
+ const section=document.querySelector('.coverage');
+ const cards=[...document.querySelectorAll('.coverage .cov-card')];
+ if(!section||!cards.length)return;
+ const animate=()=>{
+   const r=section.getBoundingClientRect();
+   const total=Math.max(1,r.height-innerHeight);
+   const p=Math.min(1,Math.max(0,-r.top/total));
+   cards.forEach((card,i)=>{
+     const center=(i/(cards.length-1||1));
+     const distance=p-center;
+     const y=Math.max(-26,Math.min(26,distance*46));
+     const opacity=Math.max(.72,1-Math.abs(distance)*.32);
+     card.style.transform=`translate3d(0,${y}px,0)`;
+     card.style.opacity=opacity;
+   });
+ };
+ let raf=0;
+ addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;animate()})},{passive:true});
+ animate();
+})();
+</script>
+</body></html>
